@@ -1,0 +1,67 @@
+.swiper-container {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+
+.swiper-slide {
+max-width:150px;
+max-height:400px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+ background-color: #8CC3D1;
+ padding: 30px;
+ color: white;
+ 
+}
+
+.cast li {
+  display: flex; 
+  flex-direction: column;
+  padding: 5px;  
+  text-align: center;  
+}
+
+.actor-img-container {
+  background-color: rgb(241, 241, 241);
+  height: 200px;
+  width: 133px;  
+}
+.cast img {
+  width: 100%;
+}
+
+.character {
+  margin: 5px 0;
+  text-transform: uppercase;
+}
+
+
+
+
+
+
+.crew {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  
+}
+.crew > li {
+  padding: 20px 10px;  
+}
+.crew > li:not(:last-child) {
+  border-bottom: 2px solid white;  
+ padding-bottom: 5px;
+}
+
+.crew h4 {
+  margin: 3px 0;
+}
+
+
+
+
