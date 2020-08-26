@@ -27,11 +27,11 @@ const SearchLine = (props) => {
           placeholder="search by movie title"
           {...bind} />
         <button type="submit">Search</button>
-        <Button
+        {/* <Button
           onClick={handleClick}
           text={'go to detailed search'}
           className={'btn detailed_search'}
-        />
+        /> */}
       </form>
 
     </>

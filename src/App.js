@@ -45,7 +45,7 @@ function App() {
           <GetMovieDetails />
         </Route>
 
-        {/* <Route exact path="/actor">
+        {/* <Route exact path="/actors">
           <ActorSearch />
         </Route> */}
 
