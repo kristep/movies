@@ -1,0 +1,38 @@
+.btn {
+  margin: 30px auto;
+  border: none;
+  width: 100px;
+  height: 40px;
+  background-color: teal;
+  color: white;
+  text-transform: uppercase;
+}
+
+.show_all,
+.load_more {  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.load_more {
+  background-color: turquoise;
+}
+
+.detailed_search {
+  margin: 0;
+  margin-left: 15px;
+  width: 150px;
+}
+
+.prev-next_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0;
+
+
+}
+.prev-next_container button {
+  margin: 0 10px
+}

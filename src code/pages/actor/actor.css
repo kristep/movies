@@ -1,0 +1,33 @@
+.actor_wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+  padding: 20px;
+}
+
+.actor_container {
+  display: flex;
+}
+
+.actor_container div {
+  padding-right: 20px;
+}
+
+.actor_img {
+  max-width: 300px;
+}
+
+.known_for {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 30px;
+}
+
+@media only screen and (max-width: 768px) {
+  .actor_container {
+    display: block;
+  }
+}
