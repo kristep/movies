@@ -2,8 +2,8 @@ import React from 'react';
 import { Switch, Route } from "react-router-dom"
 
 import Header from './components/Header/Header.jsx'
+import Navigation from "./components/navigation/Navigation.jsx";
 import Footer from './components/Footer/Footer.jsx'
-import SearchLine from './components/search/SearchLine'
 import Home from '../src/pages/home/home'
 import MovieSearch from '../src/components/search/MovieSearch'
 import GetMovieDetails from './pages/details/GetMovieDetails'
@@ -16,7 +16,9 @@ function App() {
   return (
     <React.Fragment>
       <Header />
-      <SearchLine />
+      <Navigation />
+
+      {/* <SearchLine /> */}
       <Switch>
         <Route exact path="/">
           <Home />

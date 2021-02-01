@@ -1,0 +1,9 @@
+@import "../../styles/base/base";
+
+.navigation {
+  align-items: baseline;
+  background-color: $color-finlandia;
+  display: flex;
+  height: 5rem;
+  justify-content: space-evenly;
+}

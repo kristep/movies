@@ -1,0 +1,33 @@
+@import "../../styles/base/base";
+
+.search {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  width: 30%;
+
+  &__input {
+    border: 1px solid #a5a4a1;
+    border-right: none;
+    height: 80%;
+    padding: 0.5rem;
+    width: 100%;
+    border-top-left-radius: $border-radius-base;
+    border-bottom-left-radius: $border-radius-base;
+  }
+
+  &__button {
+    background-color: $color-white;
+    border: 1px solid #a5a4a1;
+    border-left: none;
+    color: $color-finlandia;
+    font-size: $font-size-17;
+    height: 80%;
+    width: 4rem;
+    border-top-right-radius: $border-radius-base;
+    border-bottom-right-radius: $border-radius-base;
+  }
+}
