@@ -1,0 +1,49 @@
+@mixin respond-to($size, $dir) {
+    @if ($size == retina) {
+        // stylelint-disable media-feature-name-no-vendor-prefix
+        @media only screen and (min-resolution: 2dppx),
+            (-webkit-min-device-pixel-ratio: 2) {
+            @content;
+        }
+    } @else if ($size and $dir) {
+        @media screen and (#{$dir}-width: ($size + px)) {
+            @content;
+        }
+    }
+}
+
+/* ANIMATINOS
+    to use animations:
+    @include animation("animationName animationTime etc")
+*/
+
+@mixin keyframes($animation-name) {
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin animation($str) {
+    animation: #{$str};
+}
+
+// custom animations
+@include keyframes(fadeIn) {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@include keyframes(fadeOut) {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

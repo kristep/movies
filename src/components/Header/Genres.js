@@ -12,8 +12,6 @@ const Genres = () => {
           <Link to={`/popular_by_genre/${genre.id}/${genre.name}`}>
             {genre.name}
           </Link>
-
-
         </li>) : null}
     </React.Fragment>
   )
