@@ -1,0 +1,9 @@
+@import "../../styles/base/base";
+
+.navigation {
+  align-items: center;
+  background-color: $color-main-accent;
+  display: flex;
+  height: 5rem;
+  justify-content: space-evenly;
+}

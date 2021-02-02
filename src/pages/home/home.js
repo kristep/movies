@@ -2,7 +2,7 @@ import React from 'react'
 import '../searchResults/results.css'
 import './home.css'
 import JustReleasedContent from './JustReleasedContent'
-import Button from '../../elements/Button'
+import Button from '../../components/Button'
 
 const Home = () => {
 

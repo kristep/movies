@@ -1,11 +1,11 @@
 import React from 'react';
 import { Switch, Route } from "react-router-dom"
 
-import Header from './components/Header/Header.jsx'
-import Navigation from "./components/navigation/Navigation.jsx";
-import Footer from './components/Footer/Footer.jsx'
+import Header from './features/header/Header.jsx'
+import Navigation from "./features/navigation/Navigation.jsx";
+import Footer from './features/footer/Footer.jsx'
 import Home from '../src/pages/home/home'
-import MovieSearch from '../src/components/search/MovieSearch'
+import MovieSearch from '../src/features/search/MovieSearch.jsx'
 import GetMovieDetails from './pages/details/GetMovieDetails'
 import DetailedSearchForm from './pages/detailedSearch/DetailedSearchForm'
 import PopularAllTimes from './pages/popular/PopularAllTimes'
@@ -18,7 +18,6 @@ function App() {
       <Header />
       <Navigation />
 
-      {/* <SearchLine /> */}
       <Switch>
         <Route exact path="/">
           <Home />

@@ -1,0 +1,27 @@
+@import "../../styles/base/base";
+
+$_color-header-back: rgb(190, 190, 190);
+$_color-header-overlay: rgba(59, 59, 59, 0.5);
+
+.header {
+  background-color: $_color-header-back;
+  background-image: url("../../assets/movie.png");
+  background-size: contain;
+  height: 20vh;
+  width: 100vw;
+
+  &__title {
+    background-color: $_color-header-overlay;
+    color: $color-accent-l40;
+    font-weight: bold;
+    height: 20vh;
+    left: 0;
+    letter-spacing: 0.2rem;
+    padding: 5rem;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    top: 0;
+    width: 100%;
+  }
+}

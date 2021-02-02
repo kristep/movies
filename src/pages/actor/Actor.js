@@ -1,6 +1,6 @@
 import React from 'react'
 import './actor.css'
-import { useFetch } from '../../hooks/useFetch'
+import { useFetch } from '../../utils/hooks/useFetch'
 import SingleResult from '../searchResults/SingleResult'
 
 const Actor = (props) => {

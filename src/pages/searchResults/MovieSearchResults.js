@@ -1,6 +1,6 @@
 import React from 'react'
 import SingleResult from './SingleResult'
-import ShowPrevNext from '../../elements/ShowPrevNext'
+import ShowPrevNext from '../../components/ShowPrevNext'
 
 const MovieSearchResults = (props) => {
 

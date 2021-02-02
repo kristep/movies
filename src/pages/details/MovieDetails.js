@@ -1,6 +1,6 @@
 import React from 'react'
-import { GetPeople } from '../../components/people/GetPeople'
-import Crew from '../../components/people/Crew'
+import { GetPeople } from '../../features/people/GetPeople'
+import Crew from '../../features/people/Crew'
 import './details.css'
 
 const MovieDetails = (props) => {

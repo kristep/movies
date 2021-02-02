@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams } from "react-router-dom"
 import JustReleasedContent from '../home/JustReleasedContent'
-import Button from '../../elements/Button'
+import Button from '../../components/Button'
 
 const PopularByGenres = () => {
   const { genreId, genreName } = useParams()

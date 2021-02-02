@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams } from "react-router-dom"
-import { useFetch } from '../../hooks/useFetch'
+import { useFetch } from '../../utils/hooks/useFetch'
 import MovieDetails from './MovieDetails'
 
 const GetMovieDetails = () => {

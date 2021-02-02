@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Formik } from 'formik'
-import { GetGenres } from '../../components/getters/GetGenres'
-import { useFetch } from '../../hooks/useFetch'
+import { GetGenres } from '../../utils/getters/GetGenres'
+import { useFetch } from '../../utils/hooks/useFetch'
 import DetailedSearchResults from './DetailedSearchResults'
-import Test from './Test'
 
 import { GetActorData } from './GetActorData'
 
@@ -90,81 +89,81 @@ const DetailedSearchForm = () => {
             setFieldValue
 
           }) => (
-              <div>
+            <div>
 
 
-                <form onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit}>
 
-                  <div className="input-row">
-                    <label>Sort by:</label>
-                    <select
-                      value={values.sortBy}
-                      onChange={handleChange}
-                      name="sortBy"
-                      className="sort-by">
-                      <option value="vote_average.desc">popularity</option>
-                      <option value="release_year.asc">release date - ascending</option>
-                      <option value="release_year.desc">release date - decreasing</option>
-                    </select>
-                  </div>
+                <div className="input-row">
+                  <label>Sort by:</label>
+                  <select
+                    value={values.sortBy}
+                    onChange={handleChange}
+                    name="sortBy"
+                    className="sort-by">
+                    <option value="vote_average.desc">popularity</option>
+                    <option value="release_year.asc">release date - ascending</option>
+                    <option value="release_year.desc">release date - decreasing</option>
+                  </select>
+                </div>
 
-                  <div className="input-row">
-                    <label>Year of release</label>
-                    <input
-                      type="text"
-                      name="year"
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      value={values.year}
-                      className={touched.year && errors.year ? "has-error" : null}
-                    />
-                    {/* <Error touched={touched.year} message={errors.year} /> */}
-                  </div>
+                <div className="input-row">
+                  <label>Year of release</label>
+                  <input
+                    type="text"
+                    name="year"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.year}
+                    className={touched.year && errors.year ? "has-error" : null}
+                  />
+                  {/* <Error touched={touched.year} message={errors.year} /> */}
+                </div>
 
-                  <div className="input-row">
-                    <label>Actor</label>
-                    <input
-                      type="text"
-                      name="actor"
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      value={values.actor}
-                      className={touched.actor && errors.actor ? "has-error" : null}
-                    />
-                    {/* <Error touched={touched.actor} message={errors.actor} /> */}
-                  </div>
+                <div className="input-row">
+                  <label>Actor</label>
+                  <input
+                    type="text"
+                    name="actor"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.actor}
+                    className={touched.actor && errors.actor ? "has-error" : null}
+                  />
+                  {/* <Error touched={touched.actor} message={errors.actor} /> */}
+                </div>
 
 
-                  <div className="input-row">
-                    {genres !== '' ? genres.genres.map(genre => (
-                      <div key={genre.id}>
-                        <label>
-                          <input
-                            name="selectedGenre"
-                            type="radio"
-                            value={genre.id}
-                            checked={values.selectedGenre.includes(genre.id)}
-                            onChange={handleChange}
-                          />{" "}
-                          {genre.name}
-                        </label>
-                      </div>
-                    ))
-                      : null}
-                  </div>
+                <div className="input-row">
+                  {genres !== '' ? genres.genres.map(genre => (
+                    <div key={genre.id}>
+                      <label>
+                        <input
+                          name="selectedGenre"
+                          type="radio"
+                          value={genre.id}
+                          checked={values.selectedGenre.includes(genre.id)}
+                          onChange={handleChange}
+                        />{" "}
+                        {genre.name}
+                      </label>
+                    </div>
+                  ))
+                    : null}
+                </div>
 
-                  <div className="input-row">
-                    <button type="submit" disabled={isSubmitting}  >
-                      Submit
+                <div className="input-row">
+                  <button type="submit" disabled={isSubmitting}  >
+                    Submit
                   </button>
-                  </div>
+                </div>
 
 
-                  {isSubmitted ? <GetActorData values={values} isSubmitted={isSubmitted} /> : ''}
+                {isSubmitted ? <GetActorData values={values} isSubmitted={isSubmitted} /> : ''}
 
-                </form>
-              </div>
-            )}
+              </form>
+            </div>
+          )}
 
 
         </Formik>

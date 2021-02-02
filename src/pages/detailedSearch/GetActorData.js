@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { useFetch } from '../../hooks/useFetch'
-import { GetActorId } from '../../components/getters/GetActorId'
-import Test from './Test'
+import { useFetch } from '../../utils/hooks/useFetch'
+import { GetActorId } from '../../utils/getters/GetActorId'
 
 
 export const GetActorData = (props) => {

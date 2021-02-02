@@ -1,3 +1,5 @@
-$color-finlandia: rgb(216, 184, 81);
+$color-main-accent: rgb(216, 184, 81);
+$color-accent-l20: lighten($color-main-accent, 20%);
+$color-accent-l40: lighten($color-main-accent, 40%);
 
 $color-white: #fff;

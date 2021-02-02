@@ -1,0 +1,17 @@
+@import "../../styles/base/base";
+
+.genre {
+  &:nth-child(even) {
+    background-color: rgb(238, 238, 238);
+  }
+
+  &:hover {
+    background-color: lighten($color-main-accent, 20%);
+  }
+
+  &__link {
+    display: block;
+    padding: 1rem;
+    width: 100%;
+  }
+}
