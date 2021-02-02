@@ -4,10 +4,9 @@ import { Switch, Route } from "react-router-dom"
 import Header from './features/header/Header.jsx'
 import Navigation from "./features/navigation/Navigation.jsx";
 import Footer from './features/footer/Footer.jsx'
-import Home from '../src/pages/home/home'
+import Home from './pages/home/Home.jsx'
 import MovieSearch from '../src/features/search/MovieSearch.jsx'
 import GetMovieDetails from './pages/details/GetMovieDetails'
-import DetailedSearchForm from './pages/detailedSearch/DetailedSearchForm'
 import PopularAllTimes from './pages/popular/PopularAllTimes'
 import PopularByGenres from './pages/popular/PopularByGenres'
 import GetActor from './pages/actor/GetActor'
@@ -25,10 +24,6 @@ function App() {
 
         <Route exact path="/popular_all_times">
           <PopularAllTimes />
-        </Route>
-
-        <Route exact path="/detailed_search">
-          <DetailedSearchForm />
         </Route>
 
         <Route exact path="/:movieId">

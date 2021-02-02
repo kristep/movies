@@ -1,5 +1,5 @@
 import React from 'react'
-import JustReleasedContent from '../home/JustReleasedContent'
+import NewMovies from '../home/NewMovies'
 
 const PopularAllTimes = () => {
 
@@ -7,7 +7,7 @@ const PopularAllTimes = () => {
   return (
     <div className="new-movies_container ">
       <div className="new-movies-content">
-        <JustReleasedContent
+        <NewMovies
           url={url}
           text={'The most popular movies of all times:'}
         />

@@ -1,5 +1,5 @@
 import React from 'react'
-import SingleResult from './SingleResult'
+import MovieCard from '../../components/movie-card/MovieCard'
 import ShowPrevNext from '../../components/ShowPrevNext'
 
 const MovieSearchResults = (props) => {
@@ -22,7 +22,7 @@ const MovieSearchResults = (props) => {
         {
           results.length > 0 ?
             results.map(movie => (
-              <SingleResult movie={movie} key={movie.id} />
+              <MovieCard movie={movie} key={movie.id} />
             ))
             : <p>nothing to display</p>
         }

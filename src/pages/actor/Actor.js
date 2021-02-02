@@ -1,7 +1,7 @@
 import React from 'react'
 import './actor.css'
 import { useFetch } from '../../utils/hooks/useFetch'
-import SingleResult from '../searchResults/SingleResult'
+import MovieCard from '../../components/movie-card/MovieCard'
 
 const Actor = (props) => {
   const actorData = props.actorData
@@ -54,7 +54,7 @@ const Actor = (props) => {
             {
               knownForArr !== undefined && knownForArr.length > 0 ?
                 knownForArr.map(item => item.media_type === 'movie' ? (<div className="results-list" key={item.id}>
-                  <SingleResult movie={item} key={item.id} />
+                  <MovieCard movie={item} key={item.id} />
                 </div>) : '')
                 : ''
             }

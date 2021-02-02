@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 
-import { useOnClickOutside } from "../../utils/useOnClickOutside";
+import { useOnClickOutside } from "../../utils/hooks/useOnClickOutside";
 
 import "./dropdown.scss";
 
