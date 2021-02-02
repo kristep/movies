@@ -10,17 +10,18 @@ import "./navigation.scss";
 const Navigation = () => {
   return (
     <nav className="navigation">
-      <Dropdown text={"Popular by Genres"}>
-        <Genres />
-      </Dropdown>
-      <Dropdown text={"The Most popular"}>
-        <Link to="popular_all_times">
-          <li>of all time</li>
-        </Link>
-        <Link to="popular_by_year">
-          <li>of selected year</li>
-        </Link>
-      </Dropdown>
+      <ul className="navigation__list">
+        <li className="navigation__list-item">
+          <Dropdown text={"Popular by Genres"}>
+            <Genres />
+          </Dropdown>
+        </li>
+        <li className="navigation__list-item">
+          <Link to="popular_all_times" className="navigation__link">
+            The most popular
+          </Link>
+        </li>
+      </ul>
 
       <SearchLine />
     </nav>

@@ -1,6 +1,5 @@
 import React from 'react'
 import MovieCard from '../../components/movie-card/MovieCard'
-import ShowPrevNext from '../../components/ShowPrevNext'
 
 const MovieSearchResults = (props) => {
 
@@ -27,16 +26,6 @@ const MovieSearchResults = (props) => {
             : <p>nothing to display</p>
         }
       </div>
-
-      {
-        total_pages > 0 ?
-          <ShowPrevNext
-            showNext={page < total_pages ? props.showNext : null}
-            showPrev={props.showPrev}
-            page={page}
-            total_pages={total_pages}
-          /> : ''
-      }
 
     </div >
   )

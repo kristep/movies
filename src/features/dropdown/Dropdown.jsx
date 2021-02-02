@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 
 import { useOnClickOutside } from "../../utils/hooks/useOnClickOutside";
+import Button from "../../components/button/Button";
 
 import "./dropdown.scss";
 
@@ -25,14 +26,13 @@ const Dropdown = ({ text, children }) => {
 
   return (
     <div ref={dropdownRef}>
-      <button
+      <Button
+        text={text}
+        className={"navigation"}
         onClick={() => {
           setOpen(!open);
         }}
-        className="navigation__button"
-      >
-        {text}
-      </button>
+      />
       <div className={`dropdown ${open && "is-active"}`}>
         <ul className="dropdown__content">{children}</ul>
       </div>

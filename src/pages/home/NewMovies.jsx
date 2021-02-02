@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Button from "../../components/Button";
+import Button from "../../components/button/Button.jsx";
 import MovieCard from "../../components/movie-card/MovieCard";
 
 import "./newMovies.scss";
@@ -66,7 +66,7 @@ const NewMovies = (props) => {
           {page < allPages ? (
             <Button
               onClick={(e) => loadMore(e)}
-              className={"btn load_more"}
+              className={"load-more"}
               text={"Load More"}
             />
           ) : (

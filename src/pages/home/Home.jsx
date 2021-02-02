@@ -1,7 +1,7 @@
 import React from "react";
 
 import { getTodayDate, getWeekAgoDate } from "../../utils/dates";
-import Button from "../../components/Button";
+import Button from "../../components/button/Button.jsx";
 import NewMovies from "./NewMovies";
 
 import "../searchResults/results.css";
@@ -26,7 +26,7 @@ const Home = () => {
         <Button
           onClick={(event) => showAll(event)}
           text={"show all"}
-          className={"btn show_all"}
+          className={"show-all"}
         />
       </div>
 
@@ -37,7 +37,7 @@ const Home = () => {
         <Button
           onClick={(event) => showAll(event)}
           text={"show all"}
-          className={"btn show_all"}
+          className={"show-all"}
         />
       </div>
     </div>
