@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import "./castItem.scss";
 
@@ -19,6 +20,14 @@ const CastItem = ({ actor }) => {
       <span className="cast-item__name">{actor.name}</span>
     </li>
   );
+};
+
+CastItem.propTypes = {
+  actor: PropTypes.shape({
+    profile_path: PropTypes.string,
+    characterh: PropTypes.string,
+    name: PropTypes.string,
+  }),
 };
 
 export default CastItem;

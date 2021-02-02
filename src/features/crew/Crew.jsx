@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 
 import CrewItem from "./CrewItem";
 import "./crew.scss";
@@ -61,6 +62,11 @@ const Crew = ({ crew, countries }) => {
       )}
     </ul>
   );
+};
+
+Crew.propTypes = {
+  crew: PropTypes.array,
+  countries: PropTypes.array,
 };
 
 export default Crew;

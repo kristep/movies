@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import PropTypes from "prop-types";
 
 import { useOnClickOutside } from "../../utils/useOnClickOutside";
 
@@ -37,6 +38,11 @@ const Dropdown = ({ text, children }) => {
       </div>
     </div>
   );
+};
+
+Dropdown.propTypes = {
+  text: PropTypes.string,
+  children: PropTypes.element,
 };
 
 export default Dropdown;
