@@ -15,7 +15,6 @@ const GetMovieDetails = () => {
       {response.response !== null && response.response.status_code !== 34 ?
         <MovieDetails
           details={response.response}
-          movieId={movieId}
         />
         : 'sorry, this movie has no details in our database'
       }

@@ -11,10 +11,7 @@
 }
 
 .companies,
-.crew-container,
-.details-title,
-.details-pic-container,
-.details-description-container {
+.crew-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,96 +19,41 @@
   padding: 10px;
 }
 
-
 .details-title {
   grid-area: 1 / 1 / 2 / 3;  
-  width: 90vw;
-  justify-content: center;
-}
-.details-title h2 {
-  margin: 5px
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
 }
 
+.details-year {
+  font-size: 17px
+}
 
 .details-pic-container {  
   grid-area: 2 / 1 / 3 / 2;
-  border-bottom: 2px solid var(--border-color);
-}
-
-.details-info {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-  padding-bottom: 5px;
-}
-.details_genres {
-  display: flex;  
-  font-size: larger;
-
-}
-.details_genres li {
-  padding: 0 8px;
-}
-
-.details_img {
-  width: 100%;
-  min-width: 400px;
+  /* border-bottom: 2px solid var(--border-color); */
 }
 
 .details-description-container {
   grid-area: 2 / 2 / 3 / 3;
-  border-left: 2px solid var(--border-color);
-  border-top: 2px solid var(--border-color);
-  text-align: center;
+  /* border-left: 2px solid var(--border-color); */
+  /* border-top: 2px solid var(--border-color); */
 }
-
-.homepage-link {
-  border-top: 2px solid var(--border-color);
-  border-bottom: 2px solid var(--border-color);
-  color: teal;
-  padding: 3px;
-}
-
 
 .cast-container {
   grid-area: 3 / 1 / 4 / 3;
   padding: 50px 0;
-  border-left: 2px solid var(--border-color);
+  /* border-left: 2px solid var(--border-color); */
 }
 
 .crew-container {
   grid-area: 4 / 1 / 5 / 2;   
   background-color: #e5e4e23f;
-  border-top: 3px solid var(--border-color);
+  /* border-top: 3px solid var(--border-color); */
 }
 
 
-.companies {
-  grid-area: 4 / 2 / 5 / 3; 
-  padding-top: 30px;
-border-top: 3px solid var(--border-color);
-}
-
-.companies li {
-  display: flex;
-  flex-direction: column;  
-  padding: 20px;
-  justify-content: center;
-}
-.companies li img {
-  max-height: 120px;
-  max-width: 120px;
-}
-.instead-company-logo {
-  height: 100px;
-  width: 120px;
-  border: 1px solid rgb(228, 227, 227);
-  /* background-color: rgba(228, 227, 227, 0.294); */
-  border-radius: 5px;
-  padding-top: 20px;
-  text-align: center;
-}
 
 
 

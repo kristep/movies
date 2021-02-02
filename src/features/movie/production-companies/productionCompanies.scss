@@ -1,0 +1,31 @@
+@import "../../../styles/base/base";
+
+.companies {
+  font-weight: 700;
+  grid-area: 4 / 2 / 5 / 3;
+  padding-top: 30px;
+  /* border-top: 3px solid var(--border-color); */
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  &__logo {
+    max-height: 12rem;
+    max-width: 12rem;
+  }
+
+  &__instead-logo {
+    border: 1px solid rgb(228, 227, 227);
+    /* background-color: rgba(228, 227, 227, 0.294); */
+    border-radius: $border-radius-base;
+    height: 10rem;
+    padding-top: 20px;
+    text-align: center;
+    width: 12rem;
+  }
+}
