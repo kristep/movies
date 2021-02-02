@@ -1,0 +1,30 @@
+@import "../../styles/base/base";
+
+.swiper-container {
+  display: flex;
+  height: 32.5rem;
+
+  overflow: hidden;
+  width: 100%;
+}
+
+.swiper-wrapper {
+  margin: 0 2rem;
+}
+
+.swiper-slide {
+  border-radius: $border-radius-base;
+  box-shadow: $card-shadow;
+  height: 31.5rem !important;
+  width: $actor-card-width !important;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  background-color: $color-main-accent;
+  border: 2px solid white;
+  border-radius: $border-radius-base;
+  box-shadow: $card-shadow;
+  color: white !important;
+  padding: 3rem;
+}

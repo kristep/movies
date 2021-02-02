@@ -1,0 +1,36 @@
+@import "../../styles/base/base";
+@import "../../styles/mixins/mixins";
+
+.cast-item {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  &__image-wrapper {
+    background-color: $color-accent-l30;
+    height: 25rem;
+    width: $actor-card-width;
+    border-radius: $border-radius-base;
+  }
+
+  &__image {
+    height: 100%;
+    width: 100%;
+    border-top-left-radius: $border-radius-base;
+    border-top-right-radius: $border-radius-base;
+  }
+
+  &__character {
+    @include trim(1);
+
+    margin: 0.5rem 0;
+    font-weight: 700;
+  }
+
+  &__name {
+    @include trim(1);
+
+    font-style: italic;
+    padding-bottom: 0.5rem;
+  }
+}

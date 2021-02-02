@@ -1,14 +1,31 @@
 @mixin respond-to($size, $dir) {
     @if ($size == retina) {
         // stylelint-disable media-feature-name-no-vendor-prefix
-        @media only screen and (min-resolution: 2dppx),
-            (-webkit-min-device-pixel-ratio: 2) {
+        @media only screen and (min-resolution: 2dppx), (-webkit-min-device-pixel-ratio: 2) {
             @content;
         }
     } @else if ($size and $dir) {
         @media screen and (#{$dir}-width: ($size + px)) {
             @content;
         }
+    }
+}
+
+//text overflow trim
+@mixin trim($numLines: null) {
+    //95% support in caniuse.com/.
+    @if $numLines != null {
+        /* stylelint-disable */
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        /* stylelint-enable */
+        -webkit-line-clamp: $numLines;
+        overflow: hidden;
+    } @else {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 }
 
