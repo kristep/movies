@@ -5,7 +5,7 @@ import Header from './features/header/Header.jsx'
 import Navigation from "./features/navigation/Navigation.jsx";
 import Footer from './features/footer/Footer.jsx'
 import Home from './pages/home/Home.jsx'
-import MovieSearch from '../src/features/search/MovieSearch.jsx'
+import MovieSearchResults from './pages/searchResults/MovieSearchResults.jsx';
 import MovieDetails from './pages/details/MovieDetails.jsx'
 import PopularAllTimes from './pages/popular/PopularAllTimes'
 import PopularByGenres from './pages/popular/PopularByGenres'
@@ -35,7 +35,7 @@ function App() {
         </Route>
 
         <Route exact path="/search_results/:query">
-          <MovieSearch />
+          <MovieSearchResults />
         </Route>
 
         <Route exact path="/popular_by_genre/:genreId/:genreName" >

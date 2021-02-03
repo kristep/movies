@@ -1,18 +1,16 @@
 @import "../../styles/base/base";
 
-$_color-button: rgb(43, 95, 19);
-
 .button {
   margin: 2rem auto;
   border: none;
   border-radius: $border-radius-button;
   padding: 1rem 1.5rem;
-  background-color: $_color-button;
+  background-color: $color-button;
   color: white;
   text-transform: uppercase;
 
   &:hover {
-    background-color: darken($_color-button, 7%);
+    background-color: darken($color-button, 7%);
   }
 
   &--show-all,

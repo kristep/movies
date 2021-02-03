@@ -4,7 +4,6 @@ import { getTodayDate, getWeekAgoDate } from "../../utils/dates";
 import Button from "../../components/button/Button.jsx";
 import NewMovies from "./NewMovies";
 
-import "../searchResults/results.css";
 import "./home.scss";
 
 const Home = () => {
