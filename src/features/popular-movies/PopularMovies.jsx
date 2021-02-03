@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import ReactPaginate from "react-paginate";
 
 import { useFetch } from "../../utils/hooks/useFetch";
-import Button from "../../components/button/Button.jsx";
 
 import MovieCard from "../../components/movie-card/MovieCard";
 
@@ -26,7 +25,7 @@ const PopularMovies = (props) => {
     <>
       {isError && <div>Something went wrong ...</div>}
       {isLoading ? (
-        <h1>LOADING...</h1>
+        <div className="popular-movies__loader"></div>
       ) : (
         <>
           <div className="popular-movies">

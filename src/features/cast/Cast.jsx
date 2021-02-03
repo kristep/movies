@@ -42,7 +42,7 @@ const Cast = ({ cast }) => {
     <>
       {cast.length !== 0 && (
         <>
-          <h2>The main cast:</h2>
+          <h2 className="swiper-title">The main cast:</h2>
           <div className="swiper-container">
             <ul className=" swiper-wrapper ">
               {cast.map((actor) => (

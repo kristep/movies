@@ -11,7 +11,6 @@ const MovieDetails = () => {
   const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=f1782698a1c04f301973e311a7876bdb`;
 
   const response = useFetch(url, movieId);
-  console.log(response);
   return (
     <>
       {response.response !== null && response.response.status_code !== 34 ? (

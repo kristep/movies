@@ -46,7 +46,7 @@ const ImageSection = (props) => {
 ImageSection.propTypes = {
   genres: PropTypes.array,
   release_date: PropTypes.string,
-  runtime: PropTypes.string,
+  runtime: PropTypes.number,
   original_language: PropTypes.string,
   backdrop_path: PropTypes.string,
 };

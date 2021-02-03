@@ -36,7 +36,6 @@ const Details = (props) => {
   );
 
   const people = data.response;
-  console.log(budget);
   return (
     <div className="details">
       <h2 className="details__title">
@@ -99,6 +98,7 @@ Details.propTypes = {
   tagline: PropTypes.string,
   id: PropTypes.string,
   production_countries: PropTypes.array,
+  isLoading: PropTypes.bool,
 };
 
 export default Details;

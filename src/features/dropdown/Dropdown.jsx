@@ -34,7 +34,9 @@ const Dropdown = ({ text, children }) => {
         }}
       />
       <div className={`dropdown ${open && "is-active"}`}>
-        <ul className="dropdown__content">{children}</ul>
+        <ul className="dropdown__content" onClick={() => setOpen(false)}>
+          {children}
+        </ul>
       </div>
     </div>
   );

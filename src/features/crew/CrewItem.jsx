@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+import PropTypes, { oneOfType } from "prop-types";
 
 import "./crewItem.scss";
 
@@ -13,7 +13,7 @@ const CrewItem = ({ titleText, children }) => {
 
 CrewItem.propTypes = {
   titleText: PropTypes.string,
-  children: PropTypes.element,
+  children: oneOfType([PropTypes.object, PropTypes.string]),
 };
 
 export default CrewItem;

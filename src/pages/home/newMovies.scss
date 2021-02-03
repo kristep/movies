@@ -15,4 +15,9 @@
     flex-wrap: wrap;
     justify-content: center;
   }
+
+  &__loader {
+    width: 100%;
+    height: 51rem;
+  }
 }

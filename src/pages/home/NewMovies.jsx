@@ -31,7 +31,7 @@ const NewMovies = (props) => {
     <>
       {isError && <div>Something went wrong ...</div>}
       {isLoading ? (
-        <h1>LOADING...</h1>
+        <div className="new-movies__loader"></div>
       ) : (
         <>
           <div className={`new-movies ${collapsed && "new-movies--collapsed"}`}>

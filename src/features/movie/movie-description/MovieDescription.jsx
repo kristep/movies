@@ -9,7 +9,7 @@ const MovieDescription = (props) => {
     style: "currency",
     currency: "USD",
   });
-  console.log(budget);
+
   return (
     <div className="movie-description">
       <div>
@@ -47,8 +47,8 @@ const MovieDescription = (props) => {
 MovieDescription.propTypes = {
   tagline: PropTypes.string,
   overview: PropTypes.string,
-  budget: PropTypes.string,
-  revenue: PropTypes.string,
+  budget: PropTypes.number,
+  revenue: PropTypes.number,
   homepage: PropTypes.string,
 };
 

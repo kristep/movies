@@ -46,6 +46,14 @@ header {
 a {
     text-decoration: none;
     color: black;
+
+    &:focus-visible {
+        outline: $base-outline;
+    }
+
+    &:focus:not(:focus-visible) {
+        outline: 0;
+    }
 }
 
 ul,
@@ -58,6 +66,14 @@ li {
 button {
     cursor: pointer;
     font-family: $font-family;
+
+    &:focus-visible {
+        outline: $base-outline;
+    }
+
+    &:focus:not(:focus-visible) {
+        outline: 0;
+    }
 }
 
 .visually-hidden {
@@ -69,4 +85,9 @@ button {
     padding: 0;
     position: absolute;
     width: 1px;
+}
+
+.loader {
+    width: 100%;
+    height: 80vh;
 }
