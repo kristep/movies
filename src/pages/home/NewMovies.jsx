@@ -1,81 +1,76 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import ReactPaginate from "react-paginate";
+
+import { useFetch } from "../../utils/hooks/useFetch";
 import Button from "../../components/button/Button.jsx";
+
 import MovieCard from "../../components/movie-card/MovieCard";
 
 import "./newMovies.scss";
+import "../../styles/pagination.scss";
 
 const NewMovies = (props) => {
-  const [data, setData] = useState([]);
-  const [allPages, setAllPages] = useState(0);
-  const [totalRes, setTotalRes] = useState(0);
-  const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
   const [page, setPage] = useState(1);
+  const [collapsed, setCollapsed] = useState(true);
 
-  const loadMore = (e) => {
-    if (page < allPages) {
-      e.preventDefault();
-      setPage((prevPage) => prevPage + 1);
-    }
+  const { url, text } = props;
+  const { response, isLoading, isError } = useFetch(`${url}${page}`, page);
+  const pageCount = response?.total_pages;
+
+  const handlePageClick = (e) => {
+    const selectedPage = e.selected;
+    setPage(selectedPage + 1);
   };
 
-  const nowShowing = () => {
-    let current = page * 20;
-    if (current > totalRes) {
-      current = totalRes;
-    }
-    return current;
+  const showAll = (e) => {
+    setCollapsed(false);
+    e.target.style.display = "none";
   };
-
-  useEffect(() => {
-    const fetchData = async () => {
-      setIsError(false);
-      setIsLoading(true);
-      try {
-        const response = await fetch(`${props.url}${page}`);
-        const res = await response.json();
-
-        setData((prevData) => [...prevData, ...res.results]);
-        setAllPages(res.total_pages);
-        setTotalRes(res.total_results);
-      } catch (error) {
-        setIsError(true);
-      }
-      setIsLoading(false);
-    };
-    fetchData();
-  }, [page, props.url]);
-
   return (
     <>
       {isError && <div>Something went wrong ...</div>}
       {isLoading ? (
         <h1>LOADING...</h1>
       ) : (
-        <div className="new-movies">
-          <h2 className="new-movies__header">{props.text}</h2>
-          <div className="new-movies__items">
-            {data.map((movie) => (
-              <MovieCard movie={movie} key={movie.id} />
-            ))}
-          </div>
-          <p className="new-movies__counts" style={{ textAlign: "center" }}>
-            now showing: {nowShowing()} from {totalRes} results
-          </p>
+        <>
+          <div className={`new-movies ${collapsed && "new-movies--collapsed"}`}>
+            <h2 className="new-movies__header">{text}</h2>
+            <div className="new-movies__items">
+              {response?.results.map((movie) => (
+                <MovieCard movie={movie} key={movie.id} />
+              ))}
+            </div>
 
-          {page < allPages ? (
-            <Button
-              onClick={(e) => loadMore(e)}
-              className={"load-more"}
-              text={"Load More"}
+            <ReactPaginate
+              previousLabel={"prev"}
+              nextLabel={"next"}
+              breakLabel={"..."}
+              breakClassName={"break"}
+              pageCount={pageCount}
+              marginPagesDisplayed={2}
+              pageRangeDisplayed={3}
+              onPageChange={handlePageClick}
+              containerClassName={"pagination"}
+              subContainerClassName={"pages pagination"}
+              activeClassName={"active"}
             />
-          ) : (
-            ""
-          )}
-        </div>
+          </div>
+
+          <Button
+            onClick={(event) => showAll(event)}
+            text={"show all"}
+            className={"show-all"}
+          />
+        </>
       )}
     </>
   );
+};
+
+NewMovies.propTypes = {
+  url: PropTypes.string,
+  text: PropTypes.string,
 };
 
 export default NewMovies;

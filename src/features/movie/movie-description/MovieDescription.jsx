@@ -44,4 +44,12 @@ const MovieDescription = (props) => {
   );
 };
 
+MovieDescription.propTypes = {
+  tagline: PropTypes.string,
+  overview: PropTypes.string,
+  budget: PropTypes.string,
+  revenue: PropTypes.string,
+  homepage: PropTypes.string,
+};
+
 export default MovieDescription;

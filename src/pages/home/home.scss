@@ -2,5 +2,11 @@
 
 .home {
   margin: 0 auto;
-  // padding: 0 10rem;
+
+  &__section {
+    &--with-background {
+      background-color: rgba(219, 224, 224, 0.931);
+      padding: 2rem 0;
+    }
+  }
 }

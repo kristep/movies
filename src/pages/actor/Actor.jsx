@@ -1,13 +1,15 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import { useFetch } from "../../utils/hooks/useFetch";
 
-import "./actor.scss";
 import ActorInfo from "../../features/actor/actor-info/ActorInfo";
 import KnownFor from "../../features/actor/known-for/KnownFor";
 
+import "./actor.scss";
+
 const Actor = (props) => {
-  const actorData = props.actorData;
+  const { actorData } = props;
 
   const getID = () => {
     if (actorData.response !== null) {
@@ -51,6 +53,10 @@ const Actor = (props) => {
       )}
     </>
   );
+};
+
+Actor.propTypes = {
+  actorData: PropTypes.object,
 };
 
 export default Actor;

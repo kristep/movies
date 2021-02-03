@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import { useFetch } from "../../utils/hooks/useFetch";
 
@@ -81,6 +82,23 @@ const Details = (props) => {
       )}
     </div>
   );
+};
+
+Details.propTypes = {
+  title: PropTypes.string,
+  backdrop_path: PropTypes.string,
+  overview: PropTypes.string,
+  genres: PropTypes.array,
+  budget: PropTypes.string,
+  revenue: PropTypes.string,
+  release_date: PropTypes.string,
+  runtime: PropTypes.string,
+  homepage: PropTypes.string,
+  production_companies: PropTypes.array,
+  original_language: PropTypes.string,
+  tagline: PropTypes.string,
+  id: PropTypes.string,
+  production_countries: PropTypes.array,
 };
 
 export default Details;

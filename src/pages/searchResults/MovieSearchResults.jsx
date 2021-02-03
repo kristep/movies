@@ -42,7 +42,7 @@ const MovieSearchResults = () => {
         previousLabel={"prev"}
         nextLabel={"next"}
         breakLabel={"..."}
-        breakClassName={"break-me"}
+        breakClassName={"break"}
         pageCount={pageCount}
         marginPagesDisplayed={2}
         pageRangeDisplayed={5}

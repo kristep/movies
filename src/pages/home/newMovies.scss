@@ -1,6 +1,11 @@
 @import "../../styles/base/base";
 
 .new-movies {
+  &--collapsed {
+    max-height: 51rem;
+    overflow: hidden;
+  }
+
   &__header {
     text-align: center;
   }
@@ -15,22 +20,4 @@
     margin-top: 3rem;
     font-weight: 700;
   }
-}
-
-.new-movies_items .result-item {
-  flex: 0 1 15vw;
-}
-
-.new-movies_items .result-item img {
-  height: 300px;
-}
-
-.upcomming-container {
-  background-color: rgba(219, 224, 224, 0.931);
-  padding: 20px 0;
-}
-
-.new-movies_home {
-  max-height: 552px;
-  overflow: hidden;
 }
