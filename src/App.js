@@ -9,7 +9,7 @@ import MovieSearch from '../src/features/search/MovieSearch.jsx'
 import MovieDetails from './pages/details/MovieDetails.jsx'
 import PopularAllTimes from './pages/popular/PopularAllTimes'
 import PopularByGenres from './pages/popular/PopularByGenres'
-import GetActor from './pages/actor/GetActor'
+import ActorDetails from './pages/actor/ActorDetails'
 
 function App() {
   return (
@@ -31,7 +31,7 @@ function App() {
         </Route>
 
         <Route exact path="/actor/:actorName">
-          <GetActor />
+          <ActorDetails />
         </Route>
 
         <Route exact path="/search_results/:query">

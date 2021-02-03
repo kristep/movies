@@ -1,0 +1,21 @@
+@import "../../styles/base/base";
+@import "../../styles/mixins/mixins";
+
+.actor {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 3rem auto;
+  width: 80vw;
+  max-width: 120rem;
+
+  &__name {
+    margin-bottom: 3rem;
+  }
+
+  &__title {
+    @include line-under($color-accent-l20, 0.5rem);
+
+    margin: 4rem 0 3rem;
+  }
+}
