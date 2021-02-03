@@ -41,21 +41,25 @@ const Cast = ({ cast }) => {
   return (
     <>
       {cast.length !== 0 && (
-        <div className="swiper-container">
-          <ul className=" swiper-wrapper ">
-            {cast.map((actor) => (
-              <Link
-                className="swiper-slide"
-                to={`/actor/${actor.name}`}
-                key={actor.cast_id}
-              >
-                <CastItem actor={actor} />
-              </Link>
-            ))}
-          </ul>
-          <div className="swiper-button-prev"></div>
-          <div className="swiper-button-next"></div>
-        </div>
+        <>
+          <h2>The main cast:</h2>
+          <div className="swiper-container">
+            <ul className=" swiper-wrapper ">
+              {cast.map((actor) => (
+                <Link
+                  className="swiper-slide"
+                  to={`/actor/${actor.name}`}
+                  key={actor.cast_id}
+                >
+                  <CastItem actor={actor} />
+                </Link>
+              ))}
+            </ul>
+
+            <div className="swiper-button-prev"></div>
+            <div className="swiper-button-next"></div>
+          </div>
+        </>
       )}
     </>
   );

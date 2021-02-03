@@ -6,7 +6,7 @@ import Navigation from "./features/navigation/Navigation.jsx";
 import Footer from './features/footer/Footer.jsx'
 import Home from './pages/home/Home.jsx'
 import MovieSearch from '../src/features/search/MovieSearch.jsx'
-import GetMovieDetails from './pages/details/GetMovieDetails'
+import MovieDetails from './pages/details/MovieDetails.jsx'
 import PopularAllTimes from './pages/popular/PopularAllTimes'
 import PopularByGenres from './pages/popular/PopularByGenres'
 import GetActor from './pages/actor/GetActor'
@@ -27,7 +27,7 @@ function App() {
         </Route>
 
         <Route exact path="/:movieId">
-          <GetMovieDetails />
+          <MovieDetails />
         </Route>
 
         <Route exact path="/actor/:actorName">

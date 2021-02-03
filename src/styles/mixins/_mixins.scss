@@ -11,6 +11,20 @@
     }
 }
 
+@mixin line-under($color, $height) {
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        height: $height;
+        width: 100%;
+        background: $color;
+        bottom: 3px;
+        z-index: $z-index-behind;
+    }
+}
+
 //text overflow trim
 @mixin trim($numLines: null) {
     //95% support in caniuse.com/.
@@ -30,7 +44,6 @@
 }
 
 /* ANIMATINOS
-    to use animations:
     @include animation("animationName animationTime etc")
 */
 

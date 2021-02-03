@@ -4,8 +4,8 @@ import "./productionCompanies.scss";
 
 const ProductionCompanies = ({ production_companies }) => {
   return (
-    <ul className="companies">
-      Production companies:
+    <>
+      <h4 className="companies__title">Production companies:</h4>
       {production_companies.map((company) => (
         <li key={company.id} className="companies-item">
           {company.logo_path ? (
@@ -21,7 +21,7 @@ const ProductionCompanies = ({ production_companies }) => {
           )}
         </li>
       ))}
-    </ul>
+    </>
   );
 };
 

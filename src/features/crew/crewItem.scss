@@ -1,20 +1,12 @@
 @import "../../styles/base/base";
+@import "../../styles/mixins/mixins";
 
 .crew-item {
   padding: 2rem 1rem;
 
   &__title {
-    position: relative;
-    width: fit-content;
+    @include line-under($color-main-accent, 0.4rem);
 
-    &::before {
-      content: "";
-      position: absolute;
-      height: 4px;
-      width: 100%;
-      background: $color-main-accent;
-      bottom: 3px;
-      z-index: $z-index-behind;
-    }
+    width: fit-content;
   }
 }

@@ -23,6 +23,7 @@
   }
 
   &__image {
+    box-shadow: $card-shadow;
     min-width: 40rem;
     width: 100%;
   }
