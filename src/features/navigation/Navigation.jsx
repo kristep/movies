@@ -17,7 +17,7 @@ const Navigation = () => {
           </Dropdown>
         </li>
         <li className="navigation__list-item">
-          <Link to="popular_all_times" className="navigation__link">
+          <Link to="/most_popular" className="navigation__link">
             The most popular
           </Link>
         </li>

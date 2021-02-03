@@ -7,8 +7,8 @@ import Footer from './features/footer/Footer.jsx'
 import Home from './pages/home/Home.jsx'
 import MovieSearchResults from './pages/searchResults/MovieSearchResults.jsx';
 import MovieDetails from './pages/details/MovieDetails.jsx'
-import PopularAllTimes from './pages/popular/PopularAllTimes'
-import PopularByGenres from './pages/popular/PopularByGenres'
+import PopularAllTimes from './pages/popular/PopularAllTimes.jsx'
+import PopularByGenres from './pages/popular/PopularByGenres.jsx'
 import ActorDetails from './pages/actor/ActorDetails'
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
           <Home />
         </Route>
 
-        <Route exact path="/popular_all_times">
+        <Route exact path="/most_popular">
           <PopularAllTimes />
         </Route>
 

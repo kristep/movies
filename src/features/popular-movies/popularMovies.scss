@@ -1,11 +1,6 @@
 @import "../../styles/base/base";
 
-.new-movies {
-  &--collapsed {
-    max-height: 51rem;
-    overflow: hidden;
-  }
-
+.popular-movies {
   &__header {
     text-align: center;
   }
