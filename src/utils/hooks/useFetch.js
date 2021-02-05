@@ -1,31 +1,39 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react";
+import axios from "axios";
 
-
-export const useFetch = (url, query) => {
-  const [response, setResponse] = useState(null);
-  const [isError, setIsError] = useState(null);
+export const useFetch = (url, repeat) => {
+  const [response, setResponse] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
+    const CancelToken = axios.CancelToken;
+    const source = CancelToken.source();
+
     const fetchData = async () => {
-      setIsError(false);
-      setIsLoading(true);
       try {
-        const res = await fetch(url);
-        const json = await res.json();
-        setResponse(json);
+        setIsLoading(true);
+        const response = await axios.get(url, {
+          cancelToken: source.token,
+        });
+        setResponse(response.data);
+
+        setIsLoading(false);
       } catch (error) {
-        setIsError(true);
+        if (axios.isCancel(error)) {
+          return;
+        } else {
+          setIsLoading(false);
+          setError(error);
+        }
       }
-      setIsLoading(false)
     };
+    fetchData();
 
-    if (query) {
-      fetchData();
-    }
-  }, [url, query])
+    return () => {
+      source.cancel();
+    };
+  }, [url, repeat]);
 
-  return { response, isLoading, isError };
-
-};
-
+  return { response, error, isLoading };
+}

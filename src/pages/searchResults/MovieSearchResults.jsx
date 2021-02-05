@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactPaginate from "react-paginate";
 
 import { useParams } from "react-router-dom";
@@ -10,34 +10,42 @@ import "./movieSearchResults.scss";
 import "../../styles/pagination.scss";
 
 const MovieSearchResults = () => {
-  const [page, setPage] = useState(1);
-  const { query } = useParams();
-  const url = `https://api.themoviedb.org/3/search/movie?api_key=f1782698a1c04f301973e311a7876bdb&query=${query}&page=${page}`;
+  const [currentPage, setCurrentPage] = useState(1);
+  const [data, setData] = useState([]);
 
-  const { response, isLoading } = useFetch(url, query);
-  const results = response?.results;
-  const pageCount = response?.total_pages;
+  const { query } = useParams();
+  const url = `https://api.themoviedb.org/3/search/movie?api_key=f1782698a1c04f301973e311a7876bdb&query=${query}&page=${currentPage}`;
+
+  const { response: movies, isLoading } = useFetch(url, query);
+
+  useEffect(() => {
+    setData(movies);
+  }, [currentPage, movies]);
+
+  const pageCount = data.total_pages;
 
   const handlePageClick = (e) => {
     const selectedPage = e.selected;
-    setPage(selectedPage + 1);
+    setCurrentPage(selectedPage + 1);
   };
 
   return (
     <div className="search-results">
       {isLoading && <div className="loader"></div>}
       <h2 className="search-results__title">Search by: '{query}'</h2>
-      {response !== null ? (
+      {data.length !== 0 ? (
         <span className="search-results__subtitle">
-          {response?.total_results} movies found
+          {data.total_results} movies found
         </span>
       ) : (
         "No results found"
       )}
 
       <div className="search-results__list">
-        {response !== null &&
-          results.map((movie) => <MovieCard movie={movie} key={movie.id} />)}
+        {data.length !== 0 &&
+          data.results.map((movie) => (
+            <MovieCard movie={movie} key={movie.id} />
+          ))}
       </div>
       <ReactPaginate
         previousLabel={"prev"}

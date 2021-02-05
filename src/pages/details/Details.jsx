@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
 import { useFetch } from "../../utils/hooks/useFetch";
@@ -13,6 +13,8 @@ import "swiper/css/swiper.css";
 import "./details.scss";
 
 const Details = (props) => {
+  const [data, setData] = useState([]);
+
   const {
     title,
     backdrop_path,
@@ -30,12 +32,15 @@ const Details = (props) => {
     production_countries,
   } = props.details;
 
-  const data = useFetch(
+  const { response: people } = useFetch(
     `https://api.themoviedb.org/3/movie/${id}/credits?api_key=f1782698a1c04f301973e311a7876bdb`,
     "people"
   );
 
-  const people = data.response;
+  useEffect(() => {
+    setData(people);
+  }, [id, people]);
+
   return (
     <div className="details">
       <h2 className="details__title">
@@ -63,14 +68,15 @@ const Details = (props) => {
         />
       </div>
 
-      {people !== null && (
+      {data.length !== 0 && (
         <div className="details__cast">
-          <Cast cast={people.cast} />
+          <Cast cast={data.cast} />
         </div>
       )}
-      {people !== null && (
+
+      {data.length !== 0 && (
         <div className="details__crew">
-          <Crew crew={people.crew} countries={production_countries} />
+          <Crew crew={data.crew} countries={production_countries} />
         </div>
       )}
 

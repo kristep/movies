@@ -9,8 +9,8 @@ const KnownFor = (props) => {
   const { actorData } = props;
 
   const getKnownFor = () => {
-    if (actorData.response !== null) {
-      return actorData.response.results[0].known_for;
+    if (actorData) {
+      return actorData[0].known_for;
     }
   };
   const knownForArr = getKnownFor();
@@ -29,7 +29,7 @@ const KnownFor = (props) => {
 };
 
 KnownFor.propTypes = {
-  actorData: PropTypes.object,
+  actorData: PropTypes.array,
 };
 
 export default KnownFor;
