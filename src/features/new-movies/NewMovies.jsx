@@ -33,10 +33,11 @@ const NewMovies = (props) => {
     setCollapsed(false);
     e.target.style.display = "none";
   };
+
   return (
     <>
       <div className={`new-movies ${collapsed && "new-movies--collapsed"}`}>
-        <h2 className="new-movies__header">{text}</h2>
+        <h2 className="new-movies__title">{text}</h2>
         <div className="new-movies__items">
           {data.length !== 0 &&
             data.results.map((movie) => (
@@ -52,7 +53,7 @@ const NewMovies = (props) => {
             breakClassName={"break"}
             pageCount={pageCount}
             marginPagesDisplayed={2}
-            pageRangeDisplayed={3}
+            pageRangeDisplayed={5}
             onPageChange={handlePageClick}
             containerClassName={"pagination"}
             subContainerClassName={"pages pagination"}
