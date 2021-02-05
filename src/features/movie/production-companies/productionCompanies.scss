@@ -6,13 +6,25 @@
 
   &__title {
     @include line-under($color-main-accent, 0.4rem);
+
+    @include respond-to($breakpoint-lg-s, max) {
+      margin-top: 5rem;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include respond-to($breakpoint-lg-s, max) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
   }
 
   &__item {
-    display: flex;
-    flex-direction: column;
     font-weight: 500;
-    justify-content: center;
     padding: 2rem;
   }
 

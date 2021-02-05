@@ -2,4 +2,5 @@
 
 .content {
   min-height: calc(100vh - #{$height-header} - #{$height-navigation});
+  padding: 0 2rem;
 }

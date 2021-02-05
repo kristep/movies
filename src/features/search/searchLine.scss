@@ -1,4 +1,5 @@
 @import "../../styles/base/base";
+@import "../../styles/mixins/mixins";
 
 .search {
   align-items: center;
@@ -9,11 +10,16 @@
   padding: 0;
   width: 30%;
 
+  @include respond-to($breakpoint-md, max) {
+    width: 50%;
+    // height: 50%;
+  }
+
   &__input {
     border: 1px solid $color-dark;
     border-right: none;
-    height: 80%;
-    padding: 0.5rem;
+    height: 70%;
+    padding: 1rem;
     width: 100%;
     border-top-left-radius: $border-radius-base;
     border-bottom-left-radius: $border-radius-base;
@@ -25,7 +31,7 @@
     border-left: none;
     color: $color-dark;
     font-size: $font-size-17;
-    height: 80%;
+    height: 70%;
     width: 4rem;
     border-top-right-radius: $border-radius-base;
     border-bottom-right-radius: $border-radius-base;
