@@ -1,6 +1,8 @@
 @import "../../../styles/base/base";
 
 .content {
+  margin: 0 auto;
+  max-width: 140rem;
   min-height: calc(100vh - #{$height-header} - #{$height-navigation});
   padding: 0 2rem;
 }
