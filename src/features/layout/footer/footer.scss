@@ -1,11 +1,11 @@
-@import "../../styles/base/base";
+@import "../../../styles/base/base";
 
 .footer {
   background-color: $color-main-accent;
   color: $color-dark;
   display: flex;
   font-size: $font-size-12;
-  height: 8vh;
+  height: $height-footer;
   justify-content: space-between;
   padding: 1.5rem;
   width: 100%;

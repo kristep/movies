@@ -1,13 +1,13 @@
-@import "../../styles/base/base";
+@import "../../../styles/base/base";
 
 $_color-header-back: rgb(190, 190, 190);
 $_color-header-overlay: rgba(59, 59, 59, 0.5);
 
 .header {
   background-color: $_color-header-back;
-  background-image: url("../../assets/movie.png");
+  background-image: url("../../../assets/movie.png");
   background-size: contain;
-  height: 20vh;
+  height: $height-header;
   position: relative;
   width: 100vw;
 

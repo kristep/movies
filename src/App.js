@@ -1,9 +1,10 @@
 import React from 'react';
 import { Switch, Route } from "react-router-dom"
 
-import Header from './features/header/Header.jsx'
+import Content from "./features/layout/content/Content";
+import Header from './features/layout/header/Header.jsx'
 import Navigation from "./features/navigation/Navigation.jsx";
-import Footer from './features/footer/Footer.jsx'
+import Footer from './features/layout/footer/Footer.jsx'
 import Home from './pages/home/Home.jsx'
 import MovieSearchResults from './pages/searchResults/MovieSearchResults.jsx';
 import MovieDetails from './pages/details/MovieDetails.jsx'
@@ -19,27 +20,41 @@ function App() {
 
       <Switch>
         <Route exact path="/">
-          <Home />
+          <Content>
+            <Home />
+          </Content>
+
         </Route>
 
         <Route exact path="/most_popular">
-          <PopularAllTimes />
+          <Content>
+            <PopularAllTimes />
+          </Content>
         </Route>
 
         <Route exact path="/:movieId">
-          <MovieDetails />
+          <Content>
+            <MovieDetails />
+          </Content>
         </Route>
 
         <Route exact path="/actor/:actorName">
-          <ActorDetails />
+          <Content>
+            <ActorDetails />
+          </Content>
         </Route>
 
         <Route exact path="/search_results/:query">
-          <MovieSearchResults />
+          <Content>
+            <MovieSearchResults />
+          </Content>
+
         </Route>
 
         <Route exact path="/popular_by_genre/:genreId/:genreName" >
-          <PopularByGenres />
+          <Content>
+            <PopularByGenres />
+          </Content>
         </Route>
 
       </Switch>
