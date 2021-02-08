@@ -19,7 +19,7 @@ const NewMovies = (props) => {
   const elemmPerPage = 20; //we get 20 per page from API
   const pageCount = data.total_pages;
   const { width } = useWindowDimensions();
-  const { url, text, fullWidth } = props;
+  const { url, text } = props;
   const { response: movies } = useFetch(`${url}${currentPage}`, currentPage);
 
   useEffect(() => {
@@ -84,7 +84,6 @@ const NewMovies = (props) => {
 NewMovies.propTypes = {
   url: PropTypes.string,
   text: PropTypes.string,
-  fullWidth: PropTypes.bool,
 };
 
 export default NewMovies;

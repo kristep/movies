@@ -29,7 +29,7 @@ const ArrowScrollUp = () => {
 
   return (
     <>
-      {visible ? (
+      {visible && (
         <Button
           ariaLabel={"scroll to the top"}
           className={"arrow-up"}
@@ -37,8 +37,6 @@ const ArrowScrollUp = () => {
         >
           <i className="fas fa-arrow-up "></i>
         </Button>
-      ) : (
-        ""
       )}
     </>
   );
