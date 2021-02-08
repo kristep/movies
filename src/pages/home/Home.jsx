@@ -17,7 +17,11 @@ const Home = () => {
       </article>
 
       <article className="home__section home__section--with-background">
-        <NewMovies url={upcommingMoviesUrl} text={"Upcomming movies:"} />
+        <NewMovies
+          url={upcommingMoviesUrl}
+          text={"Upcomming movies:"}
+          fullWidth={true}
+        />
       </article>
     </div>
   );

@@ -1,8 +1,11 @@
 @import "../../../styles/base/base";
 
 .content {
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
   max-width: 140rem;
   min-height: calc(100vh - #{$height-header} - #{$height-navigation});
   padding: 0 2rem;
+  position: relative;
 }

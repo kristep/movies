@@ -1,14 +1,9 @@
 @import "../../styles/base/base";
 
 .new-movies {
-  &--collapsed {
-    max-height: 53rem;
-    overflow: hidden;
-  }
-
   &__title {
-    text-align: center;
     margin-bottom: 2rem;
+    text-align: center;
   }
 
   &__items {

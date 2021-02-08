@@ -21,7 +21,7 @@ const MovieCard = (props) => {
           className="movie-card__image"
         />
       ) : (
-        <img className="movie-card__image" alt="this movie has no poster" />
+        <div className="movie-card__image"></div>
       )}
 
       <div className="movie-card__description">
@@ -34,7 +34,9 @@ const MovieCard = (props) => {
           <p className="movie-card__votes">-- no votes yet --</p>
         )}
 
-        <span className="movie-card__released">{release_date}</span>
+        <span className="movie-card__released">
+          <span className="visually-hidden">Release date:</span> {release_date}
+        </span>
       </div>
     </Link>
   );

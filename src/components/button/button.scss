@@ -1,12 +1,12 @@
 @import "../../styles/base/base";
 
 .button {
-  margin: 2rem auto;
+  background-color: $color-button;
   border: none;
   border-radius: $border-radius-button;
-  padding: 1rem 1.5rem;
-  background-color: $color-button;
   color: white;
+  margin: 2rem auto;
+  padding: 1rem 1.5rem;
   text-transform: uppercase;
 
   &:hover {
@@ -15,9 +15,9 @@
 
   &--show-all,
   &--load-more {
+    align-items: center;
     display: flex;
     justify-content: center;
-    align-items: center;
   }
 
   &--navigation {
@@ -34,5 +34,19 @@
     &:hover {
       background-color: $color-accent-l20;
     }
+  }
+
+  &--arrow-up {
+    align-self: flex-end;
+    background-color: rgba($color-button, .4);
+    border-radius: $border-radius-round;
+    bottom: 2rem;
+    color: $color-white;
+    cursor: pointer;
+    font-size: 2rem;
+    padding-bottom: 1rem;
+    position: fixed;
+    right: 3rem;
+
   }
 }

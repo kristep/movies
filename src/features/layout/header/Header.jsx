@@ -6,11 +6,11 @@ import "./header.scss";
 const Header = () => {
   return (
     <header className="header">
-      <Link to="/">
-        <div className="header__overlay">
+      <div className="header__overlay">
+        <Link to="/">
           <span className="header__title">Movies library</span>
-        </div>
-      </Link>
+        </Link>
+      </div>
     </header>
   );
 };

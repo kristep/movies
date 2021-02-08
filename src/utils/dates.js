@@ -7,3 +7,8 @@ export const getWeekAgoDate = () => {
   const weekAgoDate = final.toISOString().split("T")[0];
   return weekAgoDate;
 };
+
+export const getCurrentYear = () => {
+  const date = new Date();
+  return date.getFullYear();
+};

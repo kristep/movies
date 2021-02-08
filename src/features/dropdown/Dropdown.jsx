@@ -27,12 +27,14 @@ const Dropdown = ({ text, children }) => {
   return (
     <div ref={dropdownRef}>
       <Button
-        text={text}
         className={"navigation"}
         onClick={() => {
           setOpen(!open);
         }}
-      />
+        ariaExpanded={open === true ? "true" : "false"}
+      >
+        <span>{text}</span>
+      </Button>
       <div className={`dropdown ${open && "is-active"}`}>
         <ul className="dropdown__content" onClick={() => setOpen(false)}>
           {children}
