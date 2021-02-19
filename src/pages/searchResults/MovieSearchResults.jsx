@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import ReactPaginate from "react-paginate";
 
 import { useParams } from "react-router-dom";
 import { useFetch } from "../../utils/hooks/useFetch";
+import { usePagination } from "../../utils/hooks/usePagination";
 
 import MovieCard from "../../components/movie-card/MovieCard";
 
@@ -10,24 +11,25 @@ import "./movieSearchResults.scss";
 import "../../styles/pagination.scss";
 
 const MovieSearchResults = () => {
-  const [currentPage, setCurrentPage] = useState(1);
   const [data, setData] = useState([]);
 
-  const { query } = useParams();
-  const url = `https://api.themoviedb.org/3/search/movie?api_key=f1782698a1c04f301973e311a7876bdb&query=${query}&page=${currentPage}`;
+  const movieRefs = useRef(new Array());
 
+  const { query } = useParams();
+
+  const {
+    currentPage,
+    pageCount,
+    cardToFocus,
+    handlePageClick,
+  } = usePagination(data, movieRefs);
+
+  const url = `https://api.themoviedb.org/3/search/movie?api_key=f1782698a1c04f301973e311a7876bdb&query=${query}&page=${currentPage}`;
   const { response: movies, isLoading } = useFetch(url, query);
 
   useEffect(() => {
     setData(movies);
   }, [currentPage, movies]);
-
-  const pageCount = data.total_pages;
-
-  const handlePageClick = (e) => {
-    const selectedPage = e.selected;
-    setCurrentPage(selectedPage + 1);
-  };
 
   return (
     <div className="search-results">
@@ -44,7 +46,12 @@ const MovieSearchResults = () => {
       <div className="search-results__list">
         {data.length !== 0 &&
           data.results.map((movie) => (
-            <MovieCard movie={movie} key={movie.id} />
+            <MovieCard
+              movie={movie}
+              key={movie.id}
+              movieRefs={movieRefs}
+              cardToFocus={cardToFocus}
+            />
           ))}
       </div>
 

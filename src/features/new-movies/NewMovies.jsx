@@ -2,8 +2,9 @@ import React, { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import ReactPaginate from "react-paginate";
 
-import { useWindowDimensions } from "../../utils/hooks/useWindowDimensions";
 import { useFetch } from "../../utils/hooks/useFetch";
+import { usePagination } from "../../utils/hooks/usePagination";
+import { useWindowDimensions } from "../../utils/hooks/useWindowDimensions";
 
 import Button from "../../components/button/Button.jsx";
 import MovieCard from "../../components/movie-card/MovieCard";
@@ -12,17 +13,21 @@ import "./newMovies.scss";
 import "../../styles/pagination.scss";
 
 const NewMovies = (props) => {
-  const [currentPage, setCurrentPage] = useState(1);
   const [data, setData] = useState([]);
   const [resultsToRender, setResultsToRender] = useState(0);
-  const [cardToFocus, setCardToFocus] = useState(null);
+  const movieRefs = useRef(new Array());
+
+  const {
+    currentPage,
+    pageCount,
+    cardToFocus,
+    handlePageClick,
+  } = usePagination(data, movieRefs);
 
   const elemmPerPage = 20; //we get 20 per page from API
-  const pageCount = data.total_pages;
   const { width } = useWindowDimensions();
   const { url, text } = props;
   const { response: movies } = useFetch(`${url}${currentPage}`, currentPage);
-  const movieRefs = useRef(new Array());
 
   useEffect(() => {
     setData(movies);
@@ -37,21 +42,6 @@ const NewMovies = (props) => {
       setResultsToRender(4);
     }
   }, [width]);
-
-  const handlePageClick = (e) => {
-    const selectedPage = e.selected;
-    setCurrentPage(selectedPage + 1);
-    setCardToFocus(movies.results[0].id);
-  };
-
-  useEffect(() => {
-    if (cardToFocus && movieRefs) {
-      const filtered = movieRefs.current.filter((item) =>
-        item?.href?.includes(cardToFocus.toString())
-      );
-      filtered[0].focus();
-    }
-  }, [currentPage, cardToFocus]);
 
   return (
     <>
@@ -92,7 +82,6 @@ const NewMovies = (props) => {
         <Button
           onClick={() => {
             setResultsToRender(elemmPerPage);
-            setCardToFocus(data.results[resultsToRender].id);
           }}
           className={"show-all"}
         >

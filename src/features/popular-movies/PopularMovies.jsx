@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import ReactPaginate from "react-paginate";
 
 import { useFetch } from "../../utils/hooks/useFetch";
+import { usePagination } from "../../utils/hooks/usePagination";
 
 import MovieCard from "../../components/movie-card/MovieCard";
 
@@ -10,26 +11,23 @@ import "./popularMovies.scss";
 import "../../styles/pagination.scss";
 
 const PopularMovies = (props) => {
-  const [currentPage, setCurrentPage] = useState(1);
   const [data, setData] = useState([]);
-  const [cardToFocus, setCardToFocus] = useState(null);
 
+  const movieRefs = useRef(new Array());
   const { url, text } = props;
 
+  const {
+    currentPage,
+    pageCount,
+    cardToFocus,
+    handlePageClick,
+  } = usePagination(data, movieRefs);
+
   const { response } = useFetch(`${url}${currentPage}`, currentPage);
-  const movieRefs = useRef(new Array());
 
   useEffect(() => {
     setData(response);
   }, [currentPage, response]);
-
-  const pageCount = data.total_pages;
-
-  const handlePageClick = (e) => {
-    const selectedPage = e.selected;
-    setCurrentPage(selectedPage + 1);
-    setCardToFocus(data.results[0].id);
-  };
 
   return (
     <>
