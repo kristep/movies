@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import ReactPaginate from "react-paginate";
 
-import { useWindowDimensions } from "../../utils/useWindowDimensions";
+import { useWindowDimensions } from "../../utils/hooks/useWindowDimensions";
 import { useFetch } from "../../utils/hooks/useFetch";
 
 import Button from "../../components/button/Button.jsx";
