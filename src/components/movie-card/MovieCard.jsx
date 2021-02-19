@@ -27,7 +27,7 @@ const MovieCard = (props) => {
     <Link
       to={`/${id}`}
       className="movie-card"
-      ref={(element) => movieRefs.current.push(element)}
+      ref={(element) => movieRefs?.current?.push(element)}
     >
       {poster_path ? (
         <img
