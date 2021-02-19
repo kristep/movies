@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import ReactPaginate from "react-paginate";
 
@@ -15,12 +15,14 @@ const NewMovies = (props) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [data, setData] = useState([]);
   const [resultsToRender, setResultsToRender] = useState(0);
+  const [cardToFocus, setCardToFocus] = useState(null);
 
   const elemmPerPage = 20; //we get 20 per page from API
   const pageCount = data.total_pages;
   const { width } = useWindowDimensions();
   const { url, text } = props;
   const { response: movies } = useFetch(`${url}${currentPage}`, currentPage);
+  const movieRefs = useRef(new Array());
 
   useEffect(() => {
     setData(movies);
@@ -49,7 +51,14 @@ const NewMovies = (props) => {
           {data.length !== 0 &&
             data.results
               .slice(0, resultsToRender)
-              .map((movie) => <MovieCard movie={movie} key={movie.id} />)}
+              .map((movie) => (
+                <MovieCard
+                  movie={movie}
+                  key={movie.id}
+                  movieRefs={movieRefs}
+                  cardToFocus={cardToFocus}
+                />
+              ))}
         </div>
 
         {pageCount > 1 && resultsToRender === elemmPerPage && (
@@ -71,7 +80,10 @@ const NewMovies = (props) => {
 
       {resultsToRender != elemmPerPage && (
         <Button
-          onClick={() => setResultsToRender(elemmPerPage)}
+          onClick={() => {
+            setResultsToRender(elemmPerPage);
+            setCardToFocus(data.results[resultsToRender].id);
+          }}
           className={"show-all"}
         >
           <span>show all</span>

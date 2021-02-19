@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import "./movieCard.scss";
@@ -12,8 +12,23 @@ const MovieCard = (props) => {
     poster_path,
     release_date,
   } = props.movie;
+  const { movieRefs, cardToFocus } = props;
+
+  useEffect(() => {
+    if (cardToFocus && movieRefs) {
+      const filtered = movieRefs.current.filter((item) =>
+        item?.href?.includes(cardToFocus.toString())
+      );
+      filtered[0].focus();
+    }
+  }, [movieRefs, cardToFocus]);
+
   return (
-    <Link to={`/${id}`} className="movie-card">
+    <Link
+      to={`/${id}`}
+      className="movie-card"
+      ref={(element) => movieRefs.current.push(element)}
+    >
       {poster_path ? (
         <img
           src={`https://image.tmdb.org/t/p/w300/${poster_path}`}
