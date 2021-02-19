@@ -14,7 +14,6 @@ const ArrowScrollUp = () => {
   const toggleVisibility = () => {
     if (window.pageYOffset > 400) {
       setVisible(true);
-      console.log("scrolling");
     } else {
       setVisible(false);
     }

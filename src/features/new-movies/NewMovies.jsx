@@ -41,7 +41,17 @@ const NewMovies = (props) => {
   const handlePageClick = (e) => {
     const selectedPage = e.selected;
     setCurrentPage(selectedPage + 1);
+    setCardToFocus(movies.results[0].id);
   };
+
+  useEffect(() => {
+    if (cardToFocus && movieRefs) {
+      const filtered = movieRefs.current.filter((item) =>
+        item?.href?.includes(cardToFocus.toString())
+      );
+      filtered[0].focus();
+    }
+  }, [currentPage, cardToFocus]);
 
   return (
     <>
